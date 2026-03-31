@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty of Science & Technology</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #eef2dc;
+            color: #333;
+            animation: fadeInMove 0.7s ease;/* أنيميشن عند تحميل الصفحة */
+        }
+/* أنيميشن لظهور الصفحة */
+        @keyframes fadeInMove {
+            from {
+                opacity: 0;   /* بالبداية تكون الصفحة شفافة */
+                transform: translateY(20px); /* نازلة شوي لتحت */
+            }
+
+            to {
+                opacity: 1;  /* تصير واضحة */
+                transform: translateY(0); /* ترجع لمكانها الطبيعي */
+            }
+        }
+
+
+
+     
+        .college-header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #2f5d3a;
+            color: white;
+        }
+
+        .college-header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .college-header p {
+            margin-top: 8px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /*-----------------------------------------------------
+        .gallery {
+            display: flex;
+            gap: 15px;
+            padding: 20px 8%;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+-------------------------------------------------------------*/
+        /* Dean info */
+        .dean {
+            display: flex;
+            align-items: center;
+            gap: 20px;    /* مسافة بين الصورة والنص */
+            padding: 30px 8%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 8%;
+        }
+
+        .dean img {
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        .dean-info h3 {
+            margin: 0;
+            color: #2f5d3a;
+        }
+
+        .dean-info p {
+            margin: 5px 0;
+        }
+
+        /* Specializations buttons  (التخصصات)*/
+        .departments {
+            h2 {
+                margin: 0;
+                color: #2f5d3a;
+            }
+
+            padding: 20px 8%;
+            display: flex;
+            gap: 15px; /* مسافة بين الأزرار */
+            flex-wrap: wrap;  /* نزول الزر للسطر التالي إذا ما في مساحة */
+        }
+
+        .departments button {
+            background-color: #2f5d3a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease, background-color 0.2s ease; /* حركة ناعمة */
+        }
+
+        .departments button:hover {
+            background-color: #24492e;/* حركة ناعمة */
+            transform: scale(1.05); /* تكبير بسيط */
+        }
+
+
+  
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="college-header">
+        <h1>Faculty of Science & Technology</h1>
+        <p>Welcome to our faculty overview page</p>
+    </header>
+
+
+    <!-- Dean info -->
+    <section class="dean">
+        <img src="images/Dean prof.Ayesh.png" alt="Dean">
+        <div class="dean-info">
+            <h3>Prof. Ayesh AlHroub</h3>
+            <p>Head of Faculty of Science & Technology</p>
+            <p>Email: it@zuj.edu.jo</p>
+            <p>Phone Number: 0096264291511</p>
+        </div>
+    </section>
+
+    <!-- Specializations -->
+    <section class="dean  departments">
+        <h2>Departments:</h2>
+        <a href="Computer Science Major.html"><button>Computer Science</button></a>
+        <a href="Cyber Security Major.html"><button>Cyber Security</button></a>
+        <a href="Software Engineering Major.html"><button>Software Engineering</button></a>
+        <a href="Artificial Intiligence Major.html"><button>Artificial Intiligence</button></a>
+        <a href="Mathematics Major.html"><button>Mathematics</button></a>
+    </section>
+
+</body>
+
+</html>

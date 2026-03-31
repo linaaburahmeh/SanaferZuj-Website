@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANAFER ZUJ </title>
+    <style>
+        body {
+            background-image: url(images/background1.jpg);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            animation: fadeInMove 0.7s ease; /* إضافة أنيميشن عند تحميل الصفحة */
+
+        }
+ /* أنيميشن بسيط لظهور الصفحة */
+        @keyframes fadeInMove {
+            from {
+                opacity: 0;/* الصفحة تكون شفافة بالبداية */
+                transform: translateY(20px);   /* تنزل شوي لتحت */
+            }
+
+            to {
+                opacity: 1; /* ترجع واضحة */
+                transform: translateY(0);/* ترجع لمكانها الطبيعي */
+            }
+        }
+
+        #container {
+            width: 100%;
+            height: 1000px;
+
+        }
+
+        #logo {
+            text-align: center;
+        }
+
+        #imglogo {
+            width: 20%;
+            height: 320px;
+            border-radius: 50%;
+            background-color: transparent;  /* يحاول يخلي الخلفية شفافة */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);/* ظل خفيف */
+            
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .button a {
+            margin: 0 10px;
+        }
+
+        .buttonsfeatures {
+            border-radius: 12px;
+            width: 22%;
+            height: 55px;
+            background-color: #2f5d3a;
+            color: white;
+            font-size: 22px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+            font-weight: 600;
+            transition: all 0.25s ease;     /* حركة ناعمة عند hover */
+        }
+
+        .buttonsfeatures:hover {
+            transform: translateY(-3px); /* الزر يطلع لفوق شوي */
+            background-color: #24492e; /* لون أغمق عند المرور */
+        }
+
+        .buttonsfeatures:active {
+            transform: translateY(4px) scale(0.98);/* يتحرك لأسفل ويصغر شوي *//* تأثير ضغط الزر */  
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+            /* يقل الظل عند الضغط */
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div id="container">
+        <!-------------LOGO------------>
+        <div id="logo">
+            <img src="images/LOGO.jpeg" id="imglogo">
+        </div>
+
+        <!-----------button1------------>
+        <div class="button">
+            <a href="Faculties.html"><input type="button" value="Colleges" class="buttonsfeatures"></a> &nbsp;
+            <a href="About Us.html"><input type="button" value="About Us" class="buttonsfeatures"></a>
+        </div>
+        <!----------button2-------------->
+        <div class="button">
+
+        </div>
+        <!----------button3-------------->
+        <div class="button">
+            <a href="CotactUsMadeByBasmala.html"><input type="button" value="Contact Us" class="buttonsfeatures"></a>
+            <a href="FORM.html"><input type="button" value="FAQ" class="buttonsfeatures"></a>
+        </div>
+        <!----------button4-------------->
+        <div class="button">
+            <a href="log in.html"><input type="button" value="Log in" class="buttonsfeatures"></a>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

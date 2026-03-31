@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #eef2dc;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            animation: fadeInMove 0.7s ease;
+        }
+@keyframes fadeInMove {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+        .div1 {
+            background-color: transparent;
+            color: #2f5d3a;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .div1 img {
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .div1 img:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        #div2 {
+            color: #2f5d3a;
+            width: 100%;
+            background-color: transparent;
+            height: 1000px;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .divb {
+            color: #2f5d3a;
+            width: 250px;
+            height: 250px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 16px;
+            /* نفس About Us */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+
+        .divb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .imgr {
+            height: 50%;
+            border-radius: 5px;
+            padding-top: 15px;
+        }
+
+        .buttona {
+            width: 100px;
+            height: 25px;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            background-color: #2f5d3a;
+            border: 1px solid #2f5d3a;
+            transform: all 0.1s ease;
+            cursor: pointer;
+        }
+
+        .buttona:active {
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            transform: translateY(4px) scale(0.98);
+        }
+
+        p {
+
+
+            font-size: 14px;
+        }
+
+        .x {
+            display: flex;
+            width: 70%;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        img {
+            border-radius: 5px;
+
+        }
+
+        /*--------------------------------------------------------------------*/
+        .page-title {
+            color: #2f5d3a;
+            font-size: 50px;
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+
+        .page-hr {
+            width: 50%;
+            border: 1px solid #b7c8b5;
+            margin: auto;
+        }
+
+        .divb p {
+            color: #3f3f3f;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .divb p:first-of-type {
+            /* خلي اسم الكلية اوضح*/
+            font-weight: 600;
+            color: #2f5d3a;
+        }
+
+        /*--------------------------------------------------------------------*/
+    </style>
+</head>
+
+<body>
+
+    <!-------------------Edits-------------------------------->
+    <h1 class="page-title">Our Colleges</h1>
+    <hr class="page-hr">
+
+
+
+
+
+
+    <!----------------------------------------------------------->
+    <div class="div1">
+        <a href="index.html" class="div1" title="HOME PAGE">
+            <img src="images/LOGO.jpeg" alt="SANAFERZUJ">
+        </a>
+    </div>
+    <div id="div2">
+
+        <div class="x">
+            <div class="divb">
+                <img src="images/Science and Technology.jpg" class="imgr">
+                <p>Faculty of Science and Technology</p>
+                <a href="IT college.html"><button class="buttona">Lean More</button></a>
+            </div>
+            <div class="divb">
+                <img src="images/engineering.jpg" class="imgr">
+                <p>Faculty of Engineering</p>
+                <a href="Faculty of Engineering and Tecnology.html"><button class="buttona">Lean More</button></a>
+            </div>
+            <div class="divb">
+                <img src="images/Business.jpg" class="imgr">
+                <p>Faculty of Business</p>
+                <a href="Faculty of Business.html"><button class="buttona">Lean More</button></a>
+            </div>
+        </div>
+
+        <div class="x">
+            <div class="divb">
+                <img src="images/Arts.jpg" class="imgr">
+                <p>Faculty of Arts</p>
+                <a href="Art college.html"><button class="buttona">Lean More</button></a>
+            </div>
+            <div class="divb">
+                <img src="images/law.jpg" class="imgr">
+                <p>Faculty of Law</p>
+                <a href="Law college.html"><button class="buttona">Lean More</button></a>
+            </div>
+            <div class="divb">
+                <img src="images/Pharmacy.jpg" class="imgr">
+                <p>Faculty of Pharmacy</p>
+                <a href="Faculty of Pharmacy.html"><button class="buttona">Lean More</button></a>
+            </div>
+        </div>
+
+        <div class="x">
+            <div class="divb">
+                <img src="images/Physical Therapy.jpg" class="imgr" style="width: 80%;">
+                <p>Faculty of Applied Medical Science</p>
+                <a href="Faculty of Applied Medical sciences.html"><button class="buttona">Lean More</button></a>
+            </div>
+            <div class="divb">
+                <img src="images/Nursing.jpg" class="imgr">
+                <p>Faculty of Nursing</p>
+                <a href="FacultyOfNursing.html"><button class="buttona">Lean More</button></a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

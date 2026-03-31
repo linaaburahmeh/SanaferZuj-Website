@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <style>
+        body {
+            background-color: #eef2dc;  /*edit*/
+          
+            color: #2f5d3a;/*edit*/
+            
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            animation: fadeInMove 0.7s ease;/* هاي عشان لما ينتقل للصفحة يعمل انيميشن*/ 
+
+        }
+
+        /*-----------------------------------new----------------------------------------*/
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* حطيناه بكارد عشان يطلع بشبه الصفحات اللي قبل */
+
+
+
+
+
+       .logo {
+            position: absolute;
+            /* عشان نثبتها فوق */
+            top: 20px;
+            /* المسافة من الأعلى */
+            right: 20px;
+            /* المسافة من اليسار، ممكن تغيّريها right إذا بدك الزاوية اليمنى */
+        }
+
+        .logo img {
+            width: 80px;
+            /* حجم صغير للوجو */
+            height: auto;
+            /* يحافظ على النسبة */
+            border-radius: 50%;
+            /* يجعل الصورة دائرية */
+            background-color: transparent;
+            /* يحاول يخلي الخلفية شفافة */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            /* ظل خفيف */
+            cursor: pointer;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+            /* يكبر شوي */
+            opacity: 0.8;
+            /* يصير شبه شفاف شوي */
+        }
+
+
+@keyframes fadeInMove {/* انيميشن للصفحة عند الانتقال */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+        /*-------------------------------------new--------------------------------------*/
+
+
+
+
+
+        p {
+            font-size: 15px;
+        }
+
+        h1 {
+            color: #2f5d3a;   /*edit*/
+         
+            font-size: 50px;/*edit*/
+            
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin: auto;
+        }
+
+        .container2 {
+            width: 80%;
+            margin: 40px auto;
+            display: flex
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        /*-------------------new----------------*/
+        .row img {
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+        }
+
+        /*-------------------new----------------*/
+        .info {
+            padding-right: 100px;
+        }
+
+        .input {
+            width: 250px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            border: none;
+            padding: 8px;
+        }
+
+        .submit {
+            width: 100px;
+            height: 25px;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            background-color: #2f5d3a;
+            border: 1px solid #2f5d3a;
+            transform: all 0.1s ease;
+            cursor: pointer;
+        }
+
+        .submit:active {
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            transform: translateY(4px) scale(0.98);
+        }
+
+        /*------------new-----------*/
+        .submit:hover {
+            background-color: #3f7a4a;
+        }
+
+        /*------------new-----------*/
+
+
+        #title {
+            text-align: center;
+            flex: 1;
+            font-size: 24px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        hr {
+            width: 50%;
+            color: 1px solid #b7c8b5;
+        }
+
+        h2 {
+            padding-right: 30px;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+    <!--first div -->
+    <div class="container">
+        <div id="title">
+            <h1>Contact Us</h1>
+            <hr>
+        </div><!--title-->
+
+        <div class="logo">
+            <a href="index.html" title="Home page">
+                <img src="images/LOGO.jpeg" title="Home Page" alt="logo">
+            </a>
+        </div><!--Logo-->
+
+    </div>
+
+
+    <!--sec div , details-->
+    <div class="container2">
+
+        <div class="info">
+
+            <div class="row">
+                <img src="images/location logo.jpeg">
+                <div>
+                    <h4>Address</h4>
+                    <p>Queen Alia Airport St 594 Amman</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/call logo.jpeg">
+                <div>
+                    <h4>Phone</h4>
+                    <p>+(962) 6 429 1511</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/message logo.jpeg" class="img2">
+                <div>
+                    <h4>Email</h4>
+                    <p>alert@zuj.edu.jo</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form>
+                <br>
+                <h2>Send Message</h2>
+                <input type="text" placeholder="Name" class="input" required><br><br>
+                <input type="text" required placeholder="Email" class="input" required><br><br>
+                <input type="text" placeholder="Message" class="input"><br><br>
+                <input type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

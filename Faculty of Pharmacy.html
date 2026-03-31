@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty of Pharmacy</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #eef2dc;
+            color: #333;
+            animation: fadeInMove 0.7s ease;
+        }
+
+        @keyframes fadeInMove {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+        /* Header */
+        .college-header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #2F7F7A;
+            color: white;
+        }
+
+        .college-header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .college-header p {
+            margin-top: 8px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            gap: 15px;
+            padding: 20px 8%;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dean info */
+        .dean {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 8%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 8%;
+        }
+
+        .dean img {
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        .dean-info h3 {
+            margin: 0;
+            color: #2F7F7A;
+        }
+
+        .dean-info p {
+            margin: 5px 0;
+        }
+
+        /* Specializations buttons */
+        .departments {
+            h2 {
+                margin: 0;
+                color: #2F7F7A;
+            }
+
+            padding: 20px 8%;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .departments button {
+            background-color: #2F7F7A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .departments button:hover {
+            background-color: #24492e;
+            transform: scale(1.05);
+        }
+
+
+  
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="college-header">
+        <h1>Faculty of Pharmacy</h1>
+        <p>Welcome to our faculty overview page</p>
+    </header>
+
+
+    <!-- Dean info -->
+    <section class="dean">
+        <img src="images/Prof. Dr. Ala Abdul Kareem Alhusban.png" alt="Dean">
+        <div class="dean-info">
+            <h3>Prof. Dr. Ala Abdul Kareem Alhusban</h3>
+            <p>Head of Faculty of Pharmacy</p>
+            <p>Email: pharmacy@zuj.edu.jo</p>
+            <p>Phone: 0096264291511-305</p>
+        </div>
+    </section>
+
+    <!-- Specializations -->
+    <section class="dean  departments">
+        <h2>Departments:</h2>
+        <a href="Pharmacy.html"><button>Pharmacy</button></a>
+    </section>
+
+</body>
+
+</html>

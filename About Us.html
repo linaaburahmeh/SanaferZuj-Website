@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            background-color: #eef2dc;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+             animation: fadeInMove 0.7s ease; /* أنيميشن بسيط عند فتح الصفحة */
+
+        }
+ /* أنيميشن لظهور المحتوى بشكل ناعم */
+@keyframes fadeInMove {
+    from {
+        opacity: 0;/* بالبداية الصفحة تكون مخفية */
+        transform: translateY(20px);         /* تنزل شوي لتحت */
+    }
+    to {
+        opacity: 1;  /* تصير واضحة */
+        transform: translateY(0); /* ترجع لمكانها الطبيعي */
+    }
+}
+
+
+        #aboutus {
+            color: #2f5d3a;
+            font-size: 50px;
+            font-weight: 600px;
+            text-align: center;
+            margin-bottom: 50px;
+
+
+        }
+
+
+        #container {
+            height: 1000px;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+
+
+
+        }
+
+        .card {
+            background-color: #ffffff;
+            color: #3f3f3f;
+            width: 20%;
+            height: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            font-size: 20px;
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+            text-align: center;
+
+        }
+
+
+
+
+
+
+
+        .card:hover {
+            background: linear-gradient(135deg, #a8e6cf, #dcedc1);   /* تغيير لون الخلفية عند hover */
+            transform: translateY(-5px);  /* الكارد يطلع لفوق شوي */
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);   /* تكبير الظل */
+            cursor: pointer;
+        }
+
+        #nameslist {
+            text-align: center;
+        }
+
+        #nameslist li {
+            display: inline-block;
+            /* يحط العناصر جنب بعض */
+            margin: 0 15px;
+            /* مسافة بين الأسماء */
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .logo {
+            position: absolute;
+            /* عشان نثبتها فوق */
+            top: 20px;
+            /* المسافة من الأعلى */
+            right: 20px;
+              /* وضعه في أعلى يمين الصفحة */
+        }
+
+        .logo img {
+            width: 80px;
+            /* حجم صغير للوجو */
+            height: auto;
+            /* يحافظ على النسبة */
+            border-radius: 50%;
+            /* يجعل الصورة دائرية */
+            background-color: transparent;
+            /* يحاول يخلي الخلفية شفافة */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            /* ظل خفيف */
+            cursor: pointer;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+            /*  يكبر شوي عند المرور*/
+            opacity: 0.8;
+            /* يصير شبه شفاف شوي */
+        }
+
+        .h1feature {
+            color: #2f5d3a;
+            font-size: 42px;
+        }
+
+        .mini {
+            color: #2f5d3a;
+        }
+
+        #hr {
+            color: #b7c8b5;
+            width: 50%;
+
+
+        }
+
+        .topbar {
+            width: 100%;
+            background-color: transparent;
+            /* لون الخلفية */
+            color: #2f5d3a;
+            text-align: left;
+            /* تحطي اللينكات على اليمين */
+            padding: 5px 20px;
+            position: fixed;
+            /* يظل ظاهر عند Scroll */
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            /* يكون فوق كل العناصر */
+            font-size: 14px;
+        }
+
+        .topbar a {
+            color: #2f5d3a;
+            margin-left: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .topbar a:hover {
+            color: #a8e6cf;
+            /* تغير اللون عند hover */
+        }
+
+
+
+        .linkedin {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+
+<body>
+    <div id="container">
+
+
+
+
+
+
+        <div class="topbar">
+            <img src="images/Linkedin Logo.png" class="linkedin" alt="LinkedIn">
+            <a
+                href="https://www.linkedin.com/in/leena-aburahmeh-2b9847325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Leena
+                Aburahmeh | </a>
+            <a
+                href="https://www.linkedin.com/in/diya-altahrawi-92b0513a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Diyaa
+                Altahrawi | </a>
+            <a
+                href="https://www.linkedin.com/in/basmala-albeshtawi-%D8%A8%D8%B3%D9%85%D9%84%D8%A9-%D8%A7%D9%84%D8%A8%D8%B4%D8%AA%D8%A7%D9%88%D9%8A-24971934b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Basmala
+                Albishtawi | </a>
+            <a href="https://www.linkedin.com/company/alzaytoonah-university/">ZUJ</a>
+        </div>
+        <!-------------------logo-------------------->
+        <div class="logo">
+            <a href="index.html" class="logo" title="Home Page">
+                <img src="images/LOGO.jpeg" alt="SANAFERZUJ Logo">
+            </a>
+        </div>
+        <!---------------------About Us------------------->
+        <Div>
+            <h1 id="aboutus">About Us</h1>
+            <hr id="hr"><br>
+        </Div>
+
+
+
+
+        <!-----------first card ----------->
+        <div class="card">
+            <h1 class="h1feature">Who We Are ? </h1>
+            <p>
+            <ul id="nameslist">
+                <li>Leena Aburahmeh</li>
+                <li>Diaa AlTahrawi</li>
+                <li>Basmala AlBishtawi</li>
+
+            </ul>
+            </p>
+            <p> We Are a University Students who created the "SANAFER ZUJ" website to help students choose
+                the university major that best suits their interests and abilities.</p>
+
+
+        </div>
+        <!-----------Second card ---------->
+
+        <div class="card">
+            <h1 class="h1feature">Our Goal</h1><br>
+            <p> Our Goal is to guide students in choosing the right university major by providing clear, reliable and
+                helpful information that supports their academic and career decisions. </p>
+        </div>
+
+
+        <!-------------Project Idea--------------->
+        <div class="card">
+            <h1 class="h1feature">Project Idea</h1>
+            <p>Many Students struggle with choosing the right university major due to the wide variety of colleges and
+                programs,So we bring all colleges and majors in our university into one
+                platform with clear description , study plans , and essential information to help students make the
+                right choice. </p>
+        </div>
+        <!------------------last sentences------------->
+        <div>
+            <h1 class="h1feature">Get Ready for Your University Journey!</h1>
+            <h2 class="mini">Discover The Best Path For Your Future</h2>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>

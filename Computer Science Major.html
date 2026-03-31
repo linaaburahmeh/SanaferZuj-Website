@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Science - Major</title>
+
+    <style>
+ 
+        body {
+           
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #eef2dc;
+            color: #333;
+            animation: fadeInMove 0.7s ease;/* أنيميشن عند تحميل الصفحة */
+        }    
+         /* أنيميشن لظهور الصفحة */
+           @keyframes fadeInMove {
+    from {
+        opacity: 0;  /* الصفحة تكون مخفية بالبداية */
+        transform: translateY(20px);  /* نازلة شوي */
+    }
+    to {
+        opacity: 1;  /* تصير واضحة */
+        transform: translateY(0);  /* ترجع لمكانها الطبيعي */
+    }
+}
+/* عنا قسم رئيس القسم*/
+         .hod {
+            display: flex;/* عرض الصورة والمعلومات جنب بعض */
+            gap: 20px; /* مسافة بينهم */
+            align-items: center;
+            flex-wrap: wrap;/* نزول المحتوى بسطر جديد إذا صغرت الشاشة */
+        }
+
+        .hod img {
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        #popupPlan {
+            position: fixed; /* تثبيت الصورة فوق الصفحة */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);/* توسيط الصورة */
+          
+            max-width: 90%;  /* منع خروجها عن الشاشة */
+            max-height: 90%;  /* منع خروجها عن الشاشة */
+
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);   /* ظل قوي */
+            z-index: 1000; /* فوق كل العناصر */
+            display: none;/* مخفية بالبداية */
+            background-color: white;
+        }
+
+        /* Header */
+        .major-header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #2f5d3a;    /* لون التخصص */
+            color: white;
+        }
+
+        .major-header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .major-header p {
+            margin-top: 8px;
+            font-size: 18px;
+            opacity: 0.9;/* الشفافية*/
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 8%;  /* مسافة مريحة حول كل قسم */
+        }
+
+        .section h2 {
+            color: #2f5d3a;
+            margin-bottom: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* Study plan */
+        .study-plan {
+            width: 100%;
+            max-width: 500px; /* حجم مناسب للصورة */
+            border-radius: 12px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            
+        }
+
+        /* Button */
+        .btn {
+            background-color: #2f5d3a;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;/* زر نوعا ما دائري */
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #24492e;  /* لون أغمق عند المرور*/
+        }
+/*acheivements*/
+       .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /*  متجاوب حسب حجم الشاشة يعني حسب سعتها*/
+    gap: 20px;
+}
+.small-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.small-card:hover {
+    transform: translateY(-8px); /* الكارد يطلع لفوق شوي */
+}
+
+      
+
+       
+     
+    </style>
+</head>
+
+<body>
+
+    <!-------------------------------Header---------------------------->
+    <header class="major-header">
+        <h1>Computer Science</h1>
+        <p>Faculty of Science & Technology</p>
+    </header>
+
+    <!---------------------------Description--------------------------->
+    <section class="section">
+        <h2>About the Major</h2>
+        <div class="card">
+            <p>
+              Computer Science is the study of computers and how they work. Students learn programming, algorithms,
+                software development, and problem-solving skills. The major prepares graduates for careers in software
+                engineering, AI, data analysis, and cybersecurity. It combines theory and practical projects to give
+                students the tools to create real-world solutions
+            </p>
+        </div>
+    </section>
+    <!---------------------------------HOD------------------------------------>
+<section class="section">
+<h2>Head of Department</h2>
+<div class="card hod">
+<img src="images/Dr.Mohammad Abdallah.png" alt="Head of Department">
+            <div>
+                <h3>Dr. Mohammad Abdallah</h3>
+                <p>Head of Computer Science Department</p>
+                <p>Email: cs@zuj.edu.jo</p>
+            </div>
+        </div>
+</section>
+
+    <!--------------------------Study Plan------------------------------->
+    <section class="section">
+        <h2>Major Plan</h2>
+        <div class="card center">
+            <img src="images/ComputerScience major plan.jpeg" alt="Study Plan" class="study-plan">
+            <br>
+            <button class="btn">View Full Plan</button>
+        </div>
+        <img src="images/ComputerScience major plan.jpeg" id="popupPlan" style="display:none;">
+       
+       <!--script :-->
+       
+       <script>
+            const btn = document.querySelector('.btn'); // زر "View Full Plan"
+            const popup = document.getElementById('popupPlan');
+
+            // فتح الصورة عند الضغط على الزر
+            btn.addEventListener('click', (e) => {
+                popup.style.display = 'block';
+                e.stopPropagation(); // منع إغلاقها مباشرة عند الضغط على الزر
+            });
+
+            // إغلاق الصورة عند الضغط على أي مكان بالشاشة
+            window.addEventListener('click', () => {
+                if (popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                }
+            });
+
+            // منع الضغط على الصورة نفسها من إغلاقها مباشرة
+            popup.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        </script>
+    </section>
+<!---------------------------Achievements------------------------------------>
+<section class="section">
+    <h2>Achievements</h2>
+    <div class="cards-grid">
+        <div class="small-card">
+            Obtaining the British Accreditation Certificate - ASIC
+        </div>
+        <div class="small-card">
+            Obtaining the Quality Assurance Certificate - Silver Level
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

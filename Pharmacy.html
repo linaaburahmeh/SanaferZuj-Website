@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmacy - Major</title>
+
+    <style>
+ 
+        body {
+           
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #eef2dc;
+            color: #333;
+            animation: fadeInMove 0.7s ease;
+        }    
+           @keyframes fadeInMove {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+         .hod {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hod img {
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        #popupPlan {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            background-color: white;
+        }
+
+        /* Header */
+        .major-header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #2F7F7A;
+            color: white;
+        }
+
+        .major-header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .major-header p {
+            margin-top: 8px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 8%;
+        }
+
+        .section h2 {
+            color: #2F7F7A;
+            margin-bottom: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* Study plan */
+        .study-plan {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            /* optional لو حابة تضيفي hover */
+        }
+
+        /* Button */
+        .btn {
+            background-color: #2F7F7A;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #24492e;
+        }
+
+       .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+.small-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.small-card:hover {
+    transform: translateY(-8px);
+}
+
+      
+
+       
+     
+    </style>
+</head>
+
+<body>
+
+    <!-------------------------------Header---------------------------->
+    <header class="major-header">
+        <h1>Pharmacy</h1>
+        <p>Faculty of Pharmacy</p>
+    </header>
+
+    <!---------------------------Description--------------------------->
+    <section class="section">
+        <h2>About the Major</h2>
+        <div class="card">
+            <p>
+             Pharmacy is a major that combines medical and chemical sciences, focusing on drug composition, dispensing, and their effects on the body.
+              It aims to ensure the safe and effective use of medications in various fields like hospitals and laboratories.
+            </p>
+        </div>
+    </section>
+    <!---------------------------------HOD------------------------------------>
+<section class="section">
+<h2>Head of Department</h2>
+<div class="card hod">
+<img src="images/Dr. Wassan Ghaleb Jarrar.png" alt="Head of Department">
+            <div>
+                <h3>Dr. Wassan Ghaleb Jarrar</h3>
+                <p>Head of the Pharmacy Department</p>
+                <p>Email: wassan.jarrar@zuj.edu.jo</p>
+            </div>
+        </div>
+</section>
+
+    <!--------------------------Study Plan------------------------------->
+    <section class="section">
+        <h2>Major Plan</h2>
+        <div class="card center">
+            <img src="images/Pharmacy major plan.jpg" alt="Study Plan" class="study-plan">
+            <br>
+            <button class="btn">View Full Plan</button>
+        </div>
+        <img src="images/Pharmacy major plan.jpg" id="popupPlan" style="display:none;">
+        <script>
+            const btn = document.querySelector('.btn'); // زر "View Full Plan"
+            const popup = document.getElementById('popupPlan');
+
+            // فتح الصورة عند الضغط على الزر
+            btn.addEventListener('click', (e) => {
+                popup.style.display = 'block';
+                e.stopPropagation(); // منع إغلاقها مباشرة عند الضغط على الزر
+            });
+
+            // إغلاق الصورة عند الضغط على أي مكان بالشاشة
+            window.addEventListener('click', () => {
+                if (popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                }
+            });
+
+            // منع الضغط على الصورة نفسها من إغلاقها مباشرة
+            popup.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        </script>
+    </section>
+<!---------------------------Achievements------------------------------------>
+<section class="section">
+    <h2>Achievements</h2>
+    <div class="cards-grid">
+        <div class="small-card">
+           Establishment of the master program in pharmaceutical sciences in the first semester of the academic year 2011-2012.
+        </div>
+        <div class="small-card">
+            The Faculty achieved a special capacity of 1992 students (2482 with expatriates): 1902 bachelor's degree (2378 with expatriates) and 90 master's degree (104 with expatriates).
+        </div>
+         <div class="small-card">
+            The Faculty had registered four patents.
+        </div>
+         <div class="small-card">
+            The academic staff have published more than 1000 research publications in international peer-reviewed journals classified in international databases.
+        </div>
+         <div class="small-card">
+            The Faculty has held 9 international conferences in the fields of pharmaceutical sciences, pharmaceutics and pharmaceutical technology, and biopharmaceutics and clinical pharmacy since 2006.
+        </div>
+         <div class="small-card">
+            The Faculty has established 9 well-equipped laboratories for scientific research purposes and established a research unit centre.
+        </div>
+         <div class="small-card">
+            The Faculty was the first among its peers in training its students to practice pharmacy profession and medicines dispensing through the establishment of a virtual pharmacy inside the Faculty building and was the first virtual pharmacy in Jordan established in 2006.
+        </div>
+         <div class="small-card">
+            The Faculty granted 19 Ph.D. scholarships in different fields in pharmaceutical and clinical sciences.
+        </div>
+         <div class="small-card">
+            The Faculty has signed 27 agreements with local, regional and international research centres and universities for research, academic and student exchange.
+        </div>
+         <div class="small-card">
+            The Faculty contributes to the community service through free medical days all over the Kingdom.
+        </div>
+         <div class="small-card">
+            The Faculty participates in the scientific committees of pharmaceutical companies and cooperates with the Jordan Pharmacists Association and other educational institutions in organizing scientific and educational lectures and seminars.
+        </div>
+         <div class="small-card">
+            The University received the ISO 9001: 2015 certificate in all its academic and administrative work, to be the first Jordanian University to obtain this certificate in its updated version.
+        </div>
+         <div class="small-card">
+            Obtaining the Quality Assurance Certificate for Educational Institutions in July 2017 issued by the Higher Education Accreditation and Quality Assurance Commission.
+        </div>
+         <div class="small-card">
+            Obtaining the American International Certificate of Accreditation Council for Pharmacy Education (ACPE) in February 2020 and renewing it continuously until 2026.
+        </div>
+         <div class="small-card">
+            The University received the ISO 21001:2018 certificate in all its academic and administrative work in 2021.
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

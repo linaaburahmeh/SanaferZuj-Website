@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZUJ Path Finder</title>
+    <style>
+        @keyframes fadeInMove {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-image: url(images/background1.jpg);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             animation: fadeInMove 0.7s ease;
+
+        }
+
+        .logo {
+            position: absolute;
+            /* عشان نثبتها فوق */
+            top: 20px;
+            /* المسافة من الأعلى */
+            right: 20px;
+            /* المسافة من اليسار، ممكن تغيّريها right إذا بدك الزاوية اليمنى */
+        }
+
+        .logo img {
+            width: 80px;
+            /* حجم صغير للوجو */
+            height: auto;
+            /* يحافظ على النسبة */
+            border-radius: 50%;
+            /* يجعل الصورة دائرية */
+            background-color: transparent;
+            /* يحاول يخلي الخلفية شفافة */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            /* ظل خفيف */
+            cursor: pointer;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+            /* يكبر شوي */
+            opacity: 0.8;
+            /* يصير شبه شفاف شوي */
+        }
+
+        /* الأسئلة */
+        .quiz-container {
+            background: #ffffff;
+            width: 520px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border-top: 6px solid #2f5d3a;
+        }
+
+        h1 {
+            color: #2f5d3a;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #3f3f3f;
+            margin-bottom: 20px;
+        }
+
+        /* شاشة البداية والأسئلة */
+        .step {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* الأزرار الأساسية (ابدأ و إعادة) */
+        .btn-main {
+            background-color: #2f5d3a;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* أزرار الخيارات */
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 16px;
+            margin: 10px 0;
+            background: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 15px;
+            transition: all 0.2s ease;
+        }
+
+        .option-btn:hover {
+            border-color: #2f5d3a;
+            background-color: #eef2dc;
+            color: #2f5d3a;
+            transform: translateX(5px);
+        }
+
+        /* النتيجة النهائية */
+        .result-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2f5d3a;
+            margin: 20px 0;
+            background: #eef2dc;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .university-logo {
+            position: absolute;
+            /*  الصورة تتحرك بحرية بعيد عن سنترة الصندوق */
+            top: 20px;
+            /* مسافة من الأعلى */
+            right: 20px;
+            /* مسافة من اليمين */
+            width: 80px;
+            /* يمكنك تكبير أو تصغير الحجم من هنا */
+            height: auto;
+            mix-blend-mode: multiply;
+            border-radius: 50%;
+
+        }
+
+        #ss {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            color: #2f5d3a;
+            font-size: 26px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="ss">SanaferZUJ</h1>
+    <div class="logo">
+            <a href="index.html" class="logo" title="Home Page">
+                <img src="images/LOGO.jpeg" alt="SANAFERZUJ Logo">
+            </a>
+        </div>
+    <div class="quiz-container">
+
+        <div id="welcome-screen" class="step active">
+            <h1>Welcome to ZUJ Finder</h1>
+            <p>Find your academic path at Al-Zaytoonah University.</p>
+            <input type="button" value="Get Started" class="btn-main" onclick="startQuiz()">
+        </div>
+
+        <div id="step1" class="step">
+            <h2>1. What is your favorite field?</h2>
+
+            <input type="button" value="Computing and Software" class="option-btn" onclick="process('IT')">
+            <input type="button" value="Building and Mechanics" class="option-btn" onclick="process('ENG')">
+            <input type="button" value="Biology and Pharmacy" class="option-btn" onclick="process('MED')">
+            <input type="button" value="Law and Management" class="option-btn" onclick="process('LAW_BUS')">
+
+        </div>
+
+        <div id="step2" class="step">
+            <h2>2. What do you want to be?</h2>
+            <input type="button" value="A Developer or Tech Expert" class="option-btn" onclick="process('IT')">
+            <input type="button" value="A Professional Engineer" class="option-btn" onclick="process('ENG')">
+            <input type="button" value="A Pharmacist or Nurse" class="option-btn" onclick="process('MED')">
+            <input type="button" value="A Lawyer or Judge" class="option-btn" onclick="process('LAW')">
+            <input type="button" value="A Manager or Accountant" class="option-btn" onclick="process('BUS')">
+        </div>
+
+        <div id="step3" class="step">
+            <h2>3. Which skill describes you best?</h2>
+            <input type="button" value="Logic and Mathematics" class="option-btn" onclick="process('IT_ENG')">
+            <input type="button" value="Caring and Medical research" class="option-btn" onclick="process('MED')">
+            <input type="button" value="Debating and Leadership" class="option-btn" onclick="process('LAW_BUS')">
+            <input type="button" value="Design and Creativity" class="option-btn" onclick="process('ART_DES')">
+        </div>
+
+        <div id="result-screen" class="step">
+            <h2>Recommended Faculty:</h2>
+            <div id="display-major" class="result-text"></div>
+            <input type="button" value="Restart" button class="btn-main" onclick="location.reload()">
+        </div>
+
+    </div>
+
+    <script>
+        // نظام حساب النقاط
+        let scores = { IT: 0, ENG: 0, MED: 0, BUS: 0, LAW: 0, ART: 0, DES: 0 };
+        let currentStep = 0;
+
+        function startQuiz() {
+            document.getElementById('welcome-screen').style.display = 'none';
+            currentStep = 1;
+            document.getElementById('step' + currentStep).style.display = 'block';
+        }
+
+        function process(choice) {
+            // إذا كان الخيار مركب (مثل IT_ENG) بنعطي نقطة لكل واحد
+            if (choice.includes('_')) {
+                let parts = choice.split('_');
+                parts.forEach(p => scores[p]++);
+            } else {
+                scores[choice] += 2;
+            }
+
+            // الانتقال للسؤال التالي
+            document.getElementById('step' + currentStep).style.display = 'none';
+            currentStep++;
+
+            if (currentStep <= 3) {
+                document.getElementById('step' + currentStep).style.display = 'block';
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            // اختيار التخصص صاحب أعلى نقاط
+            let winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+            const facultyNames = {
+                IT: "Faculty of IT",
+                ENG: "Faculty of Engineering",
+                MED: "Faculty of Pharmacy / Nursing",
+                BUS: "Faculty of Business",
+                LAW: "Faculty of Law",
+                ART: "Faculty of Arts",
+                DES: "Architecture and Design"
+            };
+
+            document.getElementById('display-major').innerText = facultyNames[winner];
+            document.getElementById('result-screen').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>French And English Language And Their Literature- Major</title>
+
+    <style>
+        body {
+
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #eef2dc;
+            color: #333;
+            animation: fadeInMove 0.7s ease;
+        }
+
+        @keyframes fadeInMove {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hod {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hod img {
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        #popupPlan {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            background-color: white;
+        }
+
+        /* Header */
+        .major-header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #6b4e71;
+            color: white;
+        }
+
+        .major-header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .major-header p {
+            margin-top: 8px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 8%;
+        }
+
+        .section h2 {
+            color: #6b4e71;
+            margin-bottom: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* Study plan */
+        .study-plan {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            /* optional لو حابة تضيفي hover */
+        }
+
+        /* Button */
+        .btn {
+            background-color: #6b4e71;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #6b4e71;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .small-card {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .small-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-------------------------------Header---------------------------->
+    <header class="major-header">
+        <h1>French And English Language And Their Literature</h1>
+        <p>Faculty of Arts</p>
+    </header>
+
+    <!---------------------------Description--------------------------->
+    <section class="section">
+        <h2>About the Major</h2>
+        <div class="card">
+            <p>
+                French and English Language and Their Literature is an academic major that focuses on the study of both
+                languages and their literary traditions.
+                The program explores linguistics, grammar, and classical and modern literary texts in French and
+                English.
+                Students develop strong bilingual communication, critical thinking, and literary analysis skills.
+                Graduates can work in education, translation, media, cultural institutions, and international fields.
+            </p>
+        </div>
+    </section>
+    <!---------------------------------HOD------------------------------------>
+    <section class="section">
+        <h2>Head of Department</h2>
+        <div class="card hod">
+            <img src="images/Dr.Sondos Fawzi Farman (Arts ,French).png" alt="Head of Department">
+            <div>
+                <h3>Dr. Sondos Fawzi Farman</h3>
+                <p>Head of French And English Language And Their Literature</p>
+                <p>Email: lang@zuj.edu.jo</p>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------Study Plan------------------------------->
+    <section class="section">
+        <h2>Major Plan</h2>
+        <div class="card center">
+            <img src="images/French major plan.jpeg" alt="Study Plan" class="study-plan">
+            <br>
+            <button class="btn">View Full Plan</button>
+        </div>
+        <img src="images/French major plan.jpeg" id="popupPlan" style="display:none;">
+        <script>
+            const btn = document.querySelector('.btn'); // زر "View Full Plan"
+            const popup = document.getElementById('popupPlan');
+
+            // فتح الصورة عند الضغط على الزر
+            btn.addEventListener('click', (e) => {
+                popup.style.display = 'block';
+                e.stopPropagation(); // منع إغلاقها مباشرة عند الضغط على الزر
+            });
+
+            // إغلاق الصورة عند الضغط على أي مكان بالشاشة
+            window.addEventListener('click', () => {
+                if (popup.style.display === 'block') {
+                    popup.style.display = 'none';
+                }
+            });
+
+            // منع الضغط على الصورة نفسها من إغلاقها مباشرة
+            popup.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        </script>
+    </section>
+    <!---------------------------Achievements------------------------------------>
+    <section class="section">
+        <h2>Achievements</h2>
+        <div class="cards-grid">
+            <div class="small-card">
+                Al-Zaytoonah University of Jordan signed an accession agreement to the Francophone University Agency.
+                The university has been a member of the agency since 2017.
+            </div>
+            <div class="small-card">
+                The faculty members and students of the Department and the students participate in the academic exchange
+                programs (Erasmus +) with Saint-Louis University in Belgium.
+            </div>
+            <div class="small-card">
+                The students of the Department participate annually in the student exchange sessions of the Arab Council
+                with the universities of the Arab Republic of Egypt
+            </div>
+            <div class="small-card">
+                The students of the department have participated in the activity of “The Choice of the Orient”, which is
+                held annually in Beirut, since 2017
+
+
+            </div>
+            <div class="small-card">
+                The Department obtained accreditation for the French and English Language and Literatures program from
+                the Higher Education Accreditation and Quality Assurance Commission for the academic year 2023-2024.
+
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
